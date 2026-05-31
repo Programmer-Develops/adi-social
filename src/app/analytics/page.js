@@ -44,12 +44,16 @@ export default function AnalyticsDashboard() {
     const savedData = localStorage.getItem("adishila_analytics_data");
     if (savedData) {
       try {
-        setHistoricalData(JSON.parse(savedData));
+        setTimeout(() => {
+          setHistoricalData(JSON.parse(savedData));
+        }, 0); 
       } catch (e) {
-        setHistoricalData(generate30DayData());
+        setTimeout(()=>{
+            setHistoricalData(generate30DayData());
+        }, 0)
       }
     } else {
-      setHistoricalData(generate30DayData());
+        setTimeout(()=>{setHistoricalData(generate30DayData());}, 0);
     }
     setIsLoaded(true);
   }, []);
