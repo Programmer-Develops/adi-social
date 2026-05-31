@@ -55,7 +55,9 @@ export default function AnalyticsDashboard() {
     } else {
         setTimeout(()=>{setHistoricalData(generate30DayData());}, 0);
     }
-    setIsLoaded(true);
+    setTimeout(() => {
+        setIsLoaded(true);
+    }, 0);
   }, []);
 
   // Summary aggregates (Prevent crash if data is empty)
@@ -293,7 +295,7 @@ export default function AnalyticsDashboard() {
                 <UploadCloud className="w-3.5 h-3.5 text-purple-500" /> Update Protocol
               </div>
               <p className="text-xs text-zinc-500 leading-relaxed">
-                To update the dashboard, export your native metrics from the assigned platform (Instagram/LinkedIn). Click <strong>"Upload Weekly Data"</strong> and select your `.csv` file.
+                To update the dashboard, export your native metrics from the assigned platform (Instagram/LinkedIn). Click <strong>&quot;Upload Weekly Data&quot;</strong> and select your `.csv` file.
               </p>
             </div>
           </div>
